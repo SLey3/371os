@@ -1,0 +1,12 @@
+[unstable]
+build-std = ["core"]
+json-target-spec = true
+
+# [target.'cfg(target_os = "macos")']
+# rustflags = ["-C", "link-args=-e __start -static -nostartfiles", "-C", "panic=abort"]
+
+[target.'cfg(target_os = "none")']
+runner = "bootimage runner"
+
+[build]
+target = "x86_64-osirs.json"
